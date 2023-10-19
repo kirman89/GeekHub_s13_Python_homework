@@ -9,6 +9,7 @@ color_list_2 = list(color_input_2.split(','))
 result = set()
 
 for el in color_list_1:
-    if el not in color_list_2: result.add(el)
+    if el not in color_list_2:
+        result.add(el)
 
 print(f'All colors from the first list which are not present in the 2nd list: {result}')

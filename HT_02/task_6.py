@@ -15,6 +15,6 @@ except ValueError:
 		user_input = False
 
 if user_input in group_of_values: 
-	print('True')
+	print(True)
 else:
-	print('False') 
+	print(False)
