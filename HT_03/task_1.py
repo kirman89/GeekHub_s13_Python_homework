@@ -17,5 +17,7 @@ replacement_value = input('Enter the replacement value: ')
 for i in range(len(list_of_tuples)):
 	if list_of_tuples[i]:
 		list_of_tuples[i] = list_of_tuples[i][:-1] + (replacement_value,)
+	else:
+		list_of_tuples[i] = (replacement_value,)
 
 print(list_of_tuples)

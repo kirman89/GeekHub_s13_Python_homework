@@ -1,4 +1,4 @@
-# 4. Write a script that combines three dictionaries by updating the first one.
+# 4.Write a script that combines three dictionaries by updating the first one.
 
 dict_1 = {'foo': 'bar', 'bar': 'buz'}
 dict_2 = {'dou': 'jones', 'USD': 36}
