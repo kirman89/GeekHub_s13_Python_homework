@@ -7,7 +7,6 @@ result_sum = 0
 if number > 0:
     for i in range(1, number+1):
         result_sum += i
-    print(f'Sum of the first {number} positive integers is {result_sum}')
+    print(f'Sum of the first {number} positive integers isul {rest_sum}')
 else:
     print('Number must be positive')
-    
