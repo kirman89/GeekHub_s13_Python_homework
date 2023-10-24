@@ -1,13 +1,23 @@
 # 6. Write a script to get the maximum and minimum value in a dictionary.
 
 my_dict = {
-    'a': 36,
-    'b': 225,
-    'c': 1.4,
-    'd': 633,
-    'e': 2931,
-    'f': 0.334
+    'id': 17,
+    'name': 'NoName',
+    'freeze': -35,
+    'count': 1,
+    'admin': False,
+    'errors': [400, 403],
+    'email': None,
+    'salary': 3750,
+    'speed': 75.8,
+    'file': 100644,
 }
 
-print(f'Min value: {min(my_dict.values())}')
-print(f'Max value: {max(my_dict.values())}')
+numeric_values = []
+
+for value in my_dict.values():
+    if isinstance(value, (int, float)):
+        numeric_values.append(value)
+
+print(f'Min value: {min(numeric_values)}')
+print(f'Max value: {max(numeric_values)}')

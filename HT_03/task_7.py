@@ -7,7 +7,7 @@ and value is <number>*<number>
 number = int(input("Enter your positive number: "))
 result_dict = {}
 
-for i in range(number + 1):
-    result_dict[i] = i*i
+for i in range(number+1):
+    result_dict[i] = i * i
 
 print(f'Result dict: {result_dict}')

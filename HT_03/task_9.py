@@ -6,6 +6,6 @@
 
 start_year, stop_year = map(int, input("Enter start & stop years: ").split())
 
-for year in range(start_year, stop_year + 1):
+for year in range(start_year, stop_year+1):
 	if (year % 400 == 0) or ((year % 100 != 0) and (year % 4 == 0)):
 		print(year)

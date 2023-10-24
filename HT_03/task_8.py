@@ -5,6 +5,6 @@
 
 number = int(input("Enter your positive number: "))
 
-for i in range(number + 1):
+for i in range(number+1):
     if i % 17 == 0:
     	print(i)
