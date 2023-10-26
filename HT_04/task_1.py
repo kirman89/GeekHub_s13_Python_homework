@@ -1,10 +1,10 @@
 """ 1. Написати скрипт, який приймає від користувача два числа 
 (int або float) і робить наступне:
-	a. Кожне введене значення спочатку пробує перевести в int. 
+    a. Кожне введене значення спочатку пробує перевести в int. 
 У разі помилки - пробує перевести в float, а якщо і там ловить помилку
 - пропонує ввести значення ще раз (зручніше на даному етапі навчання 
 для цього використати цикл while)
-	b. Виводить результат ділення першого на друге. 
+    b. Виводить результат ділення першого на друге. 
 Якщо виникає помилка - оброблює її і виводить відповідне повідомлення
 """
 
@@ -23,11 +23,11 @@ while True:
             print("Invalid type of input. Please, try again")
             continue
         else:
-        	break
+            break
     else:
-    	break
+        break
 
 try:
-	print(f'Result of division = {number_1 / float(number_2)}')
+    print(f'Result of division = {number_1 / float(number_2)}')
 except Exception as e:
-	print("Error", str(e))
+    print("Error", str(e))

@@ -6,17 +6,16 @@ displaying an appropriate error message.
 """
 
 class InvalidAgeError(Exception):
-	pass
+    pass
 
 
 try:
-	age = int(input("Enter valid age: "))
-	if not (18 <= age <= 120):
-		raise InvalidAgeError("This age is not valid!")
+    age = int(input("Enter valid age: "))
+    if not 18 <= age <= 120:
+        raise InvalidAgeError("This age is not valid!")
 except InvalidAgeError as e:
-	print(f'Error: {e}')
+    print(f'Error: {e}')
 except ValueError:
     print("Error: Please enter a valid input")
 else:
-	print("This age is valid!!")
-	
+    print("This age is valid!!")

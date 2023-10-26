@@ -14,4 +14,3 @@ while True:
     else:
         print(f"Congratulations! Your number is {integer_number}")
         break
-    
