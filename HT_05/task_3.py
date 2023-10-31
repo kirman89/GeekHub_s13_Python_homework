@@ -11,10 +11,13 @@
 """
 
 def compare_number_values(x, y):
+
     if x == y:
         return f'{x} equals {y}'
+
     if x > y:
         return f'{x} greater than {y} by {x - y}'
+
     else:
         return f'{y} greater than {x} by {y - x}'
 
@@ -25,7 +28,9 @@ y_input = input('Enter y: ')
 try:
     x_float = float(x_input)
     y_float = float(y_input)
+
 except ValueError:
     print('Incorrect values entered!')
+    
 else:
     print(compare_number_values(x_float, y_float))

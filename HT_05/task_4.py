@@ -17,27 +17,37 @@
 
 def list_of_alpha(input_string):
     alpha_only = []
+
     for char in input_string:
         if char.isalpha():
             alpha_only.append(char)
+            
     return alpha_only
+
 
 def list_of_digits(input_string):
     digits_only = []
+
     for char in input_string:
         if char.isdigit():
             digits_only.append(int(char))
+
     return digits_only
 
+
 def string_inspector(input_string):
+    
     if 30 <= len(input_string) <= 50:
         print(f'\nString length is: {len(input_string)}')
         print(f'String has {len(list_of_alpha(input_string))} letters')
         print(f'String has {len(list_of_digits(input_string))} digits')
+
     elif len(input_string) < 30:
         print(f'\nSum of numbers is: {sum(list_of_digits(input_string))}')
         print(f'String of alpha only is: {''.join(list_of_alpha(input_string))}')
+
     else:
         print(f"\nString length is: {len(input_string)} and it's too much for today :)")
+
 
 string_inspector(input("Give us the best string you can! \n"))

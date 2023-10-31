@@ -12,16 +12,22 @@ def calc(expresions):
     try:
         if exp_list[1] == '+':
             return float(exp_list[0]) + float(exp_list[2])
+
         elif exp_list[1] == '-':
             return float(exp_list[0]) - float(exp_list[2])
+
         elif exp_list[1] == '*':
             return float(exp_list[0]) * float(exp_list[2])
+
         elif exp_list[1] == '/':
             return float(exp_list[0]) / float(exp_list[2])
+
         elif exp_list[1] == '%':
             return float(exp_list[0]) % float(exp_list[2])
+
         elif exp_list[1] == '//':
             return float(exp_list[0]) // float(exp_list[2])
+
         elif exp_list[1] == '**':
             return float(exp_list[0]) ** float(exp_list[2])
 
@@ -32,6 +38,7 @@ def calc(expresions):
     except ValueError:
         print("Incorrect input! Check your value and operator")
         return False
+
 
 expr_input = input("Enter expresion in format 'arg1 operator arg2':\n")
 print(calc(expr_input))

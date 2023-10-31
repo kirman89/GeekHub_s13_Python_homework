@@ -15,10 +15,12 @@ def season(month_number):
     for key, value in season_dict.items():
         if month_number in key:
             return f'The season is {value}'
+
     return 'Incorrect month number!'
 
 
 try:
     print(season(int(input("Enter month number from 1 to 12: "))))
+
 except ValueError:
     print('Incorrect input. Enter month number from 1 to 12!')
