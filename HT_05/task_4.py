@@ -39,6 +39,5 @@ def string_inspector(input_string):
         print(f'String of alpha only is: {''.join(list_of_alpha(input_string))}')
     else:
         print(f"\nString length is: {len(input_string)} and it's too much for today :)")
-    return
 
 string_inspector(input("Give us the best string you can! \n"))

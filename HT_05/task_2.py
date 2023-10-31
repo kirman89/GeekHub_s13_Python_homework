@@ -25,20 +25,19 @@ def starts_with_valid_numbers(phone_number):
             return True
     return False
 
-def have_valid_lenght(phone_number):
+def have_valid_length(phone_number):
     if len(phone_number) == 10:
         return True
     else:
         return False
 
 def is_phone_number_valid(phone_number):
-    if (have_valid_lenght(phone_number) and 
+    if (have_valid_length(phone_number) and 
         starts_with_valid_numbers(phone_number) and
         consist_of_valid_chars(phone_number)):
         #Check all three conditions
         return True
     else:
         return False
-
 
 print(is_phone_number_valid(input("Enter phone number. Format 0XXXXXXXXX:")))

@@ -7,7 +7,6 @@
 """
 
 def calc(expresions):
-    operations = ['+', '-', '*', '/', '%', '//', '**']
     exp_list = expresions.split(' ')
 
     try:
