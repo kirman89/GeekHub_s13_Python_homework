@@ -45,7 +45,7 @@ def is_phone_number_valid(phone_number):
     if (have_valid_length(phone_number) and 
         starts_with_valid_numbers(phone_number) and
         consist_of_valid_chars(phone_number)):
-        #Check all three conditions
+
         return True
 
     else:
