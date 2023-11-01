@@ -12,9 +12,9 @@ def calculator():
         '+': lambda x, y: x + y,
         '-': lambda x, y: x - y,
         '*': lambda x, y: x * y,
-        '/': lambda x, y: x / y if y != 0 else "ZeroDivisionError",
-        '%': lambda x, y: x % y,
-        '//': lambda x, y: x // y if y != 0 else "ZeroDivisionError",
+        '/': lambda x, y: x / y if y != 0 else "Zero division",
+        '%': lambda x, y: x % y if y != 0 else "Zero division",
+        '//': lambda x, y: x // y if y != 0 else "Zero division",
         '**': lambda x, y: x ** y,
     }
 
