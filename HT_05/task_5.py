@@ -6,30 +6,35 @@
 Не забудьте протестувати з різними значеннями на предмет помилок!
 """
 
+
 def calc(expresions):
     exp_list = expresions.split(' ')
+    
+    argument_1 = float(exp_list[0])
+    argument_2 = float(exp_list[2])
+    operator = exp_list[1]
 
     try:
-        if exp_list[1] == '+':
-            return float(exp_list[0]) + float(exp_list[2])
+        if operator == '+':
+            return argument_1 + argument_2
 
-        elif exp_list[1] == '-':
-            return float(exp_list[0]) - float(exp_list[2])
+        elif operator == '-':
+            return argument_1 - argument_2
 
-        elif exp_list[1] == '*':
-            return float(exp_list[0]) * float(exp_list[2])
+        elif operator == '*':
+            return argument_1 * argument_2
 
-        elif exp_list[1] == '/':
-            return float(exp_list[0]) / float(exp_list[2])
+        elif operator == '/':
+            return argument_1 / argument_2
 
-        elif exp_list[1] == '%':
-            return float(exp_list[0]) % float(exp_list[2])
+        elif operator == '%':
+            return argument_1 % argument_2
 
-        elif exp_list[1] == '//':
-            return float(exp_list[0]) // float(exp_list[2])
+        elif operator == '//':
+            return argument_1 // argument_2
 
-        elif exp_list[1] == '**':
-            return float(exp_list[0]) ** float(exp_list[2])
+        elif operator == '**':
+            return argument_1 ** argument_2
 
     except ZeroDivisionError:
         print("Zero division error! Change value or operator")

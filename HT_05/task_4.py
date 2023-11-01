@@ -15,6 +15,7 @@
     -> щось вигадайте самі, проявіть фантазію =)
 """
 
+
 def list_of_alpha(input_string):
     alpha_only = []
 
@@ -44,7 +45,7 @@ def string_inspector(input_string):
 
     elif len(input_string) < 30:
         print(f'Sum of numbers is: {sum(list_of_digits(input_string))}')
-        print(f'String of alpha only is: {''.join(list_of_alpha(input_string))}')
+        print(f"String of alpha only is: {''.join(list_of_alpha(input_string))}")
 
     else:
         print(f"String length is: {len(input_string)} and it's too much for today :)")

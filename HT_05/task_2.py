@@ -6,6 +6,7 @@
 одну (четверту) функцiю, а вона в своєму тiлi - ще 3.
 """
 
+
 def consist_of_valid_chars(phone_number):
     valid_chars = '0123456789'
 

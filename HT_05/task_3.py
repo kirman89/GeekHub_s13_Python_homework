@@ -10,6 +10,7 @@
     x == y.      вiдповiдь - "х дорiвнює y"
 """
 
+
 def compare_number_values(x, y):
 
     if x == y:
