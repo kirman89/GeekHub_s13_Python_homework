@@ -10,9 +10,7 @@ def fibonacci(number):
 
     while temp_2 <= number:
         result.append(temp_2)
-        item = temp_1 + temp_2
-        temp_1 = temp_2
-        temp_2 = item
+        temp_1, temp_2 = temp_2, temp_1 + temp_2
 
     return result
 

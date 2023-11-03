@@ -8,14 +8,14 @@
 """
 
 
-def fnc(lst, shift):
-    new_lst = []
+def shift_elements_in_the_list(input_list, shift):
+    result_list = []
 
-    for index in range(len(lst)):
-        new_lst.append(lst[index - shift % len(lst)])
+    for index in range(len(input_list)):
+        result_list.append(input_list[index - shift % len(input_list)])
         
-    return new_lst
+    return result_list
 
 
-print(fnc([1, 2, 3, 4, 5], 1))
-print(fnc([1, 2, 3, 4, 5], -2))
+print(shift_elements_in_the_list([1, 2, 3, 4, 5], 1))
+print(shift_elements_in_the_list([1, 2, 3, 4, 5], -2))

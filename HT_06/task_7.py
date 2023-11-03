@@ -7,19 +7,20 @@
 """
 
 
-def count_elements(*args):
-   
-    lst_1 = list(map(str, args))
-    unique_elements = []
-    freq = []
+def count_elements(elements_list):
+    frequency = {}
 
-    for element in lst_1:
-        if element not in unique_elements and type(element):
-            unique_elements.append(element)
-            freq.append(lst_1.count(element))
+    for element in elements_list:
+        key = element if not isinstance(element, list) else str(element)
+        
+        if key in frequency:
+            frequency[key] += 1
+        else:
+            frequency[key] = 1
 
-    for element in unique_elements:
-        print(f'{element} -> {freq[unique_elements.index(element)]}')
+    for element, count in frequency.items():
+        print(f"{element} -> {count}")
 
 
-count_elements(1, 1, 'foo', [1, 2], True, 'foo', 1, [1, 2])
+count_elements([1, '1', 'foo', [1, 2], 'foo', 1, [1, 2], True, "True", None, "None", False, "False"])
+
