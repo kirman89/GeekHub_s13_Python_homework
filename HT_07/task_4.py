@@ -49,7 +49,7 @@ def morse_code(input_string):
         "...---...": "SOS"
     }
 
-    result_string = ''
+    result = []
     input_words = input_string.split('   ')
 
     for word in input_words:
@@ -59,11 +59,11 @@ def morse_code(input_string):
 
             for key, value in morse_dict.items():
                 if letter == key:
-                    result_string += value
+                    result.append(value)
 
-        result_string += ' '
+        result.append(' ')
 
-    return result_string
+    return ''.join(result)
 
 
 print(morse_code('--. . . -.- .... ..- -...   .. ...   .... . .-. .'))

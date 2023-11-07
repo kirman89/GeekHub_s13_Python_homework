@@ -34,7 +34,9 @@ def contain_digit(password):
 def is_valid_credentials(username, password):
 
     if not 3 <= len(username) <= 50:
-        raise ValidationException('Username has incorrect length')
+        raise ValidationException(
+            "Username should not be shorter than 3 or longer than 50 letters"
+            )
 
     if len(password) < 8 or not contain_digit(password):
         raise ValidationException('Password must contain digit & 8 symbols')
@@ -45,15 +47,18 @@ def is_valid_credentials(username, password):
     return True
 
 
-user_data_dict = {
-    'username1': 'password1',
-    'us': 'password2',
-    'username': 'username123',
-    'username4': 'akda;lk;234',
-    'username5': 'password',
-}
+user_data_list = [
+        {'username': 'Anton', 'password': 'qwerty123'},
+        {'username': 'Ju', 'password': '123qwerty'},
+        {'username': 'Mike', 'password': 'mike654321'},
+        {'username': 'Kate', 'password': '123456789'},
+        {'username': 'David', 'password': 'qwerty'},
+    ]
 
-for username, password in user_data_dict.items():
+for user in user_data_list:
+    username = user['username']
+    password = user['password']
+
     try:
         is_valid_credentials(username, password)
 
