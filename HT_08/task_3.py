@@ -18,34 +18,17 @@
 """
 
 
-def my_range(*args):
+def my_range(start, stop=None, step=1):
 
-    scenarios_dict = {
-        1: (0, args[0], 1),
-        2: (args[0], args[1], 1),
-        3: (args[0], args[1], args[2])
-    }
+    if stop is None:
+        start, stop = 0, start
 
-    if len(args) in scenarios_dict.keys():
-        start = scenarios_dict[len(args)][0]
-        stop = scenarios_dict[len(args)][1]
-        step = scenarios_dict[len(args)][2]
+    if (step > 0 and start >= stop) or (step < 0 and start <= stop):
+        raise ValueError("Invalid arguments for my_range function")
     
-    else:
-        raise TypeError('my_range function expecting from 1 to 3 arguments!')
-    
-    if step > 0 and start < stop:
-        while start < stop:
-            yield start
-            start += step
-
-    elif step < 0 and start > stop:
-        while start > stop:
-            yield start
-            start += step
-
-    else:
-        print("You entered invalid data")
+    while (step > 0 and start < stop) or (step < 0 and start > stop):
+        yield start
+        start += step
 
 
 for i in my_range(1, 10, 2):

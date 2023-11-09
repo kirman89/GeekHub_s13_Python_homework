@@ -26,7 +26,7 @@ def array_diff(list_1, list_2):
     while True:
         try:
             result_list.append(next(difference))
-        except:
+        except StopIteration:
             return result_list
 
 

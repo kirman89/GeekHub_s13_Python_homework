@@ -36,7 +36,7 @@ def counter_of_repeating_values(input_string):
             else:
                 char_count_dict[current_char] = 1
 
-        except:
+        except StopIteration:
             counter = 0
             for value in char_count_dict.values():
                 if value > 1:

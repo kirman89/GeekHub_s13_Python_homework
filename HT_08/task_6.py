@@ -21,7 +21,7 @@ def shortest_word_length(input_string):
     while True:
         try:
             shortest = min(len(next(words)), shortest)
-        except:
+        except StopIteration:
             return shortest
 
 
