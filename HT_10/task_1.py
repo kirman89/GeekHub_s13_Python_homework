@@ -148,6 +148,7 @@ def check_balance(connection, username):
     result = cursor.fetchone()
 
     if result is None:
+        insert_initial_balance_sum(connection, username, 0)
         balance = 0
     else:
         balance = result[0]
@@ -238,7 +239,7 @@ def withdraw_money(connection, username):
     if is_valid_amount(user_input):
         amount = int(user_input)
 
-        if amount > check_atm_balance_sum(connection, username):
+        if amount > check_atm_balance_sum(connection):
             print("Not enough funds in the ATM. Try a smaller amount.")
             return
 
@@ -267,6 +268,9 @@ def register_new_user(connection):
     print("\nUser must be unique and credentials at least 5 characters long.")
 
     username = input("Enter username of new user: ")
+    if not is_valid_credential(username):
+        print("Username must be at least 5 characters long.")
+        return
 
     if user_exists(connection, username):
         print("Error, the entered user already exists")
@@ -274,10 +278,11 @@ def register_new_user(connection):
 
     password = input("Enter password of new user: ")
 
-    if not is_valid_credentials(username, password):
-        print("Credentials must be at least 5 characters long.")
+    if not is_valid_credential(password):
+        print("Password must be at least 5 characters long.")
     else:
         insert_new_user_to_db(connection, username, password)
+        insert_initial_balance_sum(connection, username, 0)
         print("\nNew user has been added to DB.")
 
 
@@ -288,6 +293,25 @@ def insert_new_user_to_db(connection, username, password):
         INSERT INTO users (username, password, is_admin) 
         VALUES (?, ?, 0)
     """, (username, password))
+
+    connection.commit()
+
+
+def insert_initial_balance_sum(connection, username, initial_balance):
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        SELECT id 
+        FROM users
+        WHERE username=?
+    """, (username,))
+
+    user_id = cursor.fetchone()[0]
+
+    cursor.execute("""
+        INSERT INTO user_balance (user_id, balance, last_update) 
+        VALUES (?, ?, ?)
+    """, (user_id, initial_balance, datetime.now()))
 
     connection.commit()
 
@@ -306,8 +330,8 @@ def user_exists(connection, username):
     return result is not None and len(result) > 0
 
 
-def is_valid_credentials(username, password):
-    return len(username) >= 5 and len(password) >= 5
+def is_valid_credential(credential):
+    return len(credential) >= 5
 
 
 def check_atm_balance(connection):

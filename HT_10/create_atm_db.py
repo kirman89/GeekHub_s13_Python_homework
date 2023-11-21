@@ -1,3 +1,4 @@
+from datetime import datetime
 import sqlite3
 from pathlib import Path
 
@@ -70,18 +71,18 @@ def create_atm_db():
             cursor.executemany("INSERT INTO atm_balance VALUES (?,?)", bills)
 
             cursor.execute("""
-                INSERT OR IGNORE INTO user_balance (user_id, balance) 
-                VALUES (1, 0)
+                INSERT OR IGNORE INTO user_balance (user_id, balance, last_update) 
+                VALUES (1, 0, CURRENT_TIMESTAMP)
             """)
 
             cursor.execute("""
-                INSERT OR IGNORE INTO user_balance (user_id, balance) 
-                VALUES (2, 500)
+                INSERT OR IGNORE INTO user_balance (user_id, balance, last_update) 
+                VALUES (2, 500, CURRENT_TIMESTAMP)
             """)
 
             cursor.execute("""
-                INSERT OR IGNORE INTO user_balance (user_id, balance) 
-                VALUES (3, 1000)
+                INSERT OR IGNORE INTO user_balance (user_id, balance, last_update) 
+                VALUES (3, 1000, CURRENT_TIMESTAMP)
             """)
 
             connection.commit()
