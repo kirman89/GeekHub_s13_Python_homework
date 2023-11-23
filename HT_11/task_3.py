@@ -93,7 +93,8 @@ class ATM:
                 print("\n\nCongratulations! You received a bonus of 100 UAH")
                 self.database.insert_initial_balance_sum(username, 100)
 
-            self.database.insert_initial_balance_sum(username, 0)
+            else:
+                self.database.insert_initial_balance_sum(username, 0)
 
 
     def check_atm_balance(self):
